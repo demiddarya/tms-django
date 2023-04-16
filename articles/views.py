@@ -7,5 +7,5 @@ from .models import Article
 
 def index(request: HttpRequest):
     articles = Article.objects
-    context = {'article_list': articles}
+    context = {'articles_list': articles}
     return render(request, 'articles/index.html', context)

@@ -1,0 +1,10 @@
+{% extends 'articles/base.html' %}
+
+{% block body %}
+
+    <p>{{ article.title }}</p>
+    <p>{{ article.author }}</p>
+    <p>{{ article.text }}</p>
+    <p>Like:{{ article.like_count }}</p>
+
+{% endblock %}

@@ -11,3 +11,6 @@ class Product(models.Model):
     name = models.CharField(max_length=200)
     description = models.CharField(max_length=500)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products')
+
+    def __str__(self):
+        return self.name

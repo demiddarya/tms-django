@@ -8,12 +8,12 @@
     <h1>Articles:</h1>
     {% if article_list %}
     <ul>
-        {% for article in article_list %}
-        <li><a href="{% url 'articles:detail' article.id ">{{article.title}}</a></li>
+        {% for article in articles_list %}
+        <li><a href="{% url 'articles:detail' article.id ">{{ article.title }}</a></li>
         {% endfor %}
     </ul>
     {% else %}
-        <p>No polls are available</p>
+        <p>No articles are available</p>
     {% endif %}
 </body>
 </html>

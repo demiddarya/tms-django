@@ -4,9 +4,12 @@
 
 {% block body %}
     <h1>{{ question.question_text }}</h1>
-    <ul>
-        {% for choice in question.choices.all %}
-            <li>{{ choice.choice_text }}</li>
+    <form action="{% url 'polls:vote' question.id %}" method="post">
+        {% csrf_token %}
+        {% for choice in question.choices.all|dictsort:'choice_text' %}
+             <input type="radio" name="choice_id" value="{{ choice.id }}"/>
+        {{ choice.choice_text }} -- {{ choice.votes }}<br>
         {% endfor %}
-    </ul>
+        <input type="submit" value="Vote"/>
+    </form>
 {% endblock %}
