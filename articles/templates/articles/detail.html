@@ -6,5 +6,9 @@
     <p>{{ article.author }}</p>
     <p>{{ article.text }}</p>
     <p>Like:{{ article.like_count }}</p>
-
+    <form method="post" action="{% url articles:like %}">
+        {% csrf_token%}
+        <input type="hidden" name="article_id" value="{{ article.id }}"/>
+        <input type="submit" value="Like"/>
+    </form>
 {% endblock %}
