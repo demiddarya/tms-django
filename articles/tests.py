@@ -10,13 +10,13 @@ def create_article(title, text, author, like_count):
 
 class ArticleTest(TestCase):
     def test_empty_list(self):
-        article = self.client.get(reverse('articles:main'))
+        article = self.client.get(reverse('articles:index'))
         self.assertEquals(article.status_code, 200)
         self.assertContains(article, 'There are no articles')
 
     def test_new_list(self):
         article = create_article('1', '2', '3', '4')
-        response = self.client.get(reverse("articles:main"))
+        response = self.client.get(reverse("articles:index"))
         self.assertEquals(response.status_code, 200)
         self.assertQuerysetEqual(response.context['articles'], [article])
 

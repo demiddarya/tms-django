@@ -1,0 +1,10 @@
+{% extends 'shop/base.html' %}
+
+{% block body %}
+    <br/><h3>Edit your profile info:</h3>
+    <form action="{% url 'shop:edit_profile' user.id %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Apply">
+    </form>
+{% endblock %}

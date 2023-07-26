@@ -1,0 +1,11 @@
+{% extends 'shop/base.html' %}
+{% block title %}Profile{% endblock %}
+
+{% block body %}
+    <br/><h3>Your profile info:</h3>
+    <h4><b>Username:</b> {{user.username}}</h4>
+    <h4><b>Email:</b> {{user.email}}</h4>
+    <h4><b>First Name:</b> {{user.first_name}}</h4>
+    <h4><b>Last Name:</b> {{user.last_name}}</h4>
+    <a href="{% url 'shop:edit_profile' user.id %}">Edit profile</a>
+{% endblock %}

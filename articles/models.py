@@ -4,11 +4,18 @@ from django.db import models
 # Create your models here.
 
 
+class Author(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    date_of_birth = models.DateField()
+
+
 class Article(models.Model):
     title = models.CharField(max_length=200)
     text = models.TextField()
-    author = models.CharField(max_length=200)
     like_count = models.IntegerField(default=0)
+    # authors = models.TextField(Author)
+
 
     @admin.display(
         boolean=True,

@@ -1,0 +1,7 @@
+{% extends 'shop/base.html' %}
+{% block title %}Order status{% endblock %}
+
+{% block body %}
+    <br/><h3>Order №{{ order.id }} has been confirmed</h3>
+    <p>Order price: {{ order.price }}</p>
+{% endblock %}

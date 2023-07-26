@@ -8,7 +8,7 @@ from .models import Article
 def index(request: HttpRequest):
     articles = Article.objects.all
     context = {'articles_list': articles}
-    return render(request, 'articles/index.html', context)
+    return render(request, 'articles/base.html', context)
 
 
 def detail(request, article_id: int):
